@@ -1,0 +1,80 @@
+<div class="sidenav" >
+    <div class="logo-container">
+        <div class="logo">
+            <i class="far fa-cube" style="color:#C1C0FF ;"></i>
+        </div>
+    </div>
+    <ul class="sidenav-nav" (click)="toggleCollapse()" >
+        <li class="sidenav-nav-item" 
+            *ngFor="let data of navData; let i = index"
+            (click)=' getLabelName(data.label);sendIconStr(data.label)'
+        >
+            <a class="sidenav-nav-link "  [routerLink]="[data.routeLink]" 
+            >
+                <i class="sidenav-link-icon" [class]="data.icon" ></i>
+            </a>
+        </li>
+        <li class="sidenav-nav-item">
+            <a class="sidenav-nav-link " 
+            >
+                <i class="sidenav-link-icon fa fa-window-close" ></i>
+            </a>
+        </li>
+    </ul>
+
+    <div *ngIf="collapsed && profileValue == 'Dashboard'" class="body-collapse">
+        <div style=" display: flex;align-items: center;">
+            <h3 
+            *ngIf="profileValue == 'Dashboard'"
+            style="margin-left: 10px;margin-top:30px;margin-right: 30px;"
+            >Cihazlar
+            </h3>
+            <!-- <i class="fal fa-compress-wide float-end fa-2x" style=" margin-right:25px;margin-top:25px"
+            (click)="toggleCollapse()"
+            >   
+            </i> -->
+            <div class="miniCollapse" (click)="toggleCollapse()">
+                <i class="fal fa-angle-left alignIcon fa-2x" ></i>
+            </div>
+        </div>
+
+        <input class="form-control" type="text" [(ngModel)]="text" placeholder="Cihaz Ara.."
+            style="width:80% ;margin-left: 10%;"
+        >
+
+        <ul class="sidenav-nav">
+            <li  class="sidenav-nav-item" *ngFor="let data of commonData | searchFilter:text ;let i = index ">
+                <a class="sidenav-nav-link"  (click)="collapseIcon(data.label);clickedIndex = i;
+                getId(i)" style=" display:flex">
+                    <span  class="sidenav-ngif"  *ngIf="collapsed" style="left:30px">
+                        {{data.label}}
+                    </span>
+                    <i  class="fa fa-arrow-right "
+                        id="testi"
+                        style="position: relative; color: black; left: 70px;" >
+                    </i>
+                </a>
+
+
+                <div  #collapseIconDiv *ngIf="collapsed && data.submenuLevel1 && data.submenuLevel1.length > 0"
+                    >
+                    <ul *ngIf="status && deviceName == data.label && clickedIndex === i"
+                        class="sidenav-nav-item subMenuAnimation" [class.success]="data?.submenuLevel1?.length">
+                        
+                        <li
+                            *ngFor="let sub1 of data.submenuLevel1;let i=index"
+                        >
+                            <a [routerLink]="[sub1.routeLink]" (click) = "onClickDevice(sub1.label)"
+                            class="sidenav-nav-link" id="li-hoever">
+                            <i class="sidenav-link-icon" style="color: black;" [class]="data.icon" ></i>
+                                <span class="sidenav-ngif">{{sub1.label}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+</div>
+

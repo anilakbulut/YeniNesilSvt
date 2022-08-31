@@ -1,0 +1,25 @@
+
+<div class="">
+    <div class="row " >
+        <div class="col " style="height:50px; background-color: white; width: 1290px;;"> 
+            <div class="ellipse float-end"></div>            
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3" style="height:800px; border-radius: 12px;background-color: white;"
+
+[ngStyle]="{'background-color': whichIcon == 'Profile' ? 'rgb(224, 237, 243)':'white'}"
+
+>
+    <div class="row">
+        <div class="col mt-4">
+            <router-outlet >
+                <h3 *ngIf="deviceTest" style="margin-left:20px ;">Alarmlar</h3>
+                <h5 *ngIf="deviceTest" style="margin-left:20px; color: #0056D8;" > {{whichDevice}}</h5>
+            </router-outlet>
+        </div>
+    </div>
+</div>
+
+

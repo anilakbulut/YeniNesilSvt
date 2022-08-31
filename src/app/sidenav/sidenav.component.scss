@@ -1,0 +1,226 @@
+.sidenav {
+    background: #5457CD;
+    transition: all .5s ease;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+    box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        padding: 0.938rem 0.938rem 0 0.938rem;
+        width: 100%;
+        background: #4547A9;
+        .logo {
+            margin-bottom: 10px;
+            text-align: center;
+            width: 3rem;
+            min-width: 3rem;
+            border-radius: 0.313rem;
+            padding: 0.313rem;
+            font-size: 24px;
+            font-weight: 900;
+            cursor: pointer;
+            border: none;
+        }
+
+        .logo-text {
+            margin-left: 1.5rem;
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .btn-close {
+            margin-left: auto;
+            cursor: pointer;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: transparent;
+            border: none;
+
+            .fa-times {
+                color: #fff;
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+.sidenav-collapsed {
+    width: 16.5625rem;
+}
+
+.sidenav-nav {
+    list-style: none;
+    padding: 0.938rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100% - 3.65rem);
+    cursor: pointer;
+
+    .sidenav-nav-item {
+        width: 100%;
+        margin-bottom: 0.625rem;
+        
+        .sidenav-nav-link {
+            display: flex;
+            align-items: center;
+            height: 3rem;
+            color: #f3f3f3;
+            text-decoration: none;
+            border-radius: 0.625rem;
+            transition: all .3s ease;
+            
+            .sidenav-link-icon {
+                font-size: 22px;
+                width: 2rem;
+                min-width: 2rem;
+                margin: 0 0.5rem;
+                text-align: center;
+            }
+
+            .sidenav-link-subicon{
+                font-size: 22px;
+                width: 2rem;
+                min-width: 2rem;
+                text-align: center;
+            }
+
+            .sidenav-link-text {
+                margin-left: 1.5rem;
+            }
+            .sidenav-ngif{
+                color: black;
+            }
+
+
+        }
+    }
+
+    .sidenav-nav-item:hover {
+        .sidenav-nav-link:not(li):hover{
+            background-color: #ababce;
+            color: white;
+        }
+        .sidenav-nav-link-sub {
+            background-color: #ababce;
+            color: white;
+        }
+    }
+}
+
+.active {
+    background-color: #a2a3e2;
+
+    .sidenav-link-icon{
+        color: black;
+    }
+    .sidenav-link-text {
+        color: rgb(59, 57, 202);
+    }
+}
+.body-collapse{
+    width: 12rem;
+    height:100%;
+    position:fixed;
+    background-color: white;
+    top: 0;
+    left: 0;
+    margin-left: 5rem;
+    animation: showMe 1s forwards;
+    -webkit-box-shadow: 51px 40px 25px 16px rgba(69,71,169,0.09);
+    -moz-box-shadow: 51px 40px 25px 16px rgba(69,71,169,0.09);
+    box-shadow: 51px 40px 25px 16px rgba(69,71,169,0.09);
+}
+.body-collapse:hover{
+    background-color: rgb(241, 236, 236);
+    transition: 1s;
+}
+
+@keyframes showMe{
+    100%{
+        opacity: 1;
+    }
+    0%{
+        opacity: 0;
+    }
+}
+
+ul{
+    list-style-type: none;
+}
+
+li.active{
+    background-color: #a2a3e2;
+}
+
+#li-hoever:hover{
+    background-color: #a2a3e2;
+}
+
+
+li:nth-child(4){
+    margin: auto;
+}
+
+#sideMenu:hover{
+    background-color: brown;
+}
+.subMenuAnimation{
+    animation: showdiv 1s forwards;
+    transition: 3s;
+}
+@keyframes showdiv{
+    100%{
+        opacity: 1;
+    }
+    0%{
+        opacity: 0;
+    }
+}
+
+.subMenuAnimation {
+    animation: fadeIn 1s ease-out backwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+.miniCollapse{
+    position: absolute;
+    width: 27px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid rgba(58, 53, 129, 0.5);
+    margin-left: 178px;
+    margin-top: 20px;
+}
+.alignIcon{
+    position: absolute;
+    margin-left: 4px;
+    margin-top: -4px;
+}
+
+.miniCollapse:hover{
+    background-color: #bebff1;
+    transition: 0.5s;
+    // -webkit-box-shadow: 3px -2px 79px 34px rgba(29,28,31,0.32);
+    // -moz-box-shadow: 3px -2px 79px 34px rgba(29,28,31,0.32);
+    // box-shadow: 3px -2px 79px 34px rgba(112, 111, 116, 0.32);
+    .alignIcon{
+        transition: 0.5s;
+    }
+}

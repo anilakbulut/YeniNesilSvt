@@ -1,0 +1,153 @@
+<div>
+<div class="container">
+
+      <div class="row">
+          <div class="col">
+              <div class="rectangle">
+              
+              </div>
+          </div>
+
+          <div class="col">
+            <table class="tui-table">
+              <tbody>
+                  <tr class="tui-table__tr">
+                      <th class="tui-table__th">Pin No</th>
+                      <th class="tui-table__th">Sayaç Tipi</th>
+                      <th class="tui-table__th">Alt Limit</th>
+                      <th class="tui-table__th">Üst Limit</th>
+                      <th class="tui-table__th"></th>
+                  </tr>
+                  <tr class="tui-table__tr" *ngFor="let item of alert">
+                      <td class="tui-table__td">{{item.pinNo}}</td>
+                      <td class="tui-table__td">{{item.counterType}}</td>
+                      <td class="tui-table__td">{{item.LowerLimit}}</td>
+                      <td class="tui-table__td">{{item.UpperLimit}}</td>
+                      <td class="tui-table__td">
+                        <!-- <i class="fas fa-info" ></i>
+                        <i class="fas fa-pencil me-4 ms-4" ></i> -->
+                        <i
+                          tuiButton
+                          type="button"
+                          size="m"
+                          class="tui-space_right-3 fas fa-info"
+                          (click)="showDialog(content)"
+                        >
+                        </i>
+                        <i
+                        tuiButton
+                        type="button"
+                        size="m"
+                        class="tui-space_right-3 fas fa-pencil"
+                        (click)="editDialog(edit)"
+                        >
+                        </i>
+                      </td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+</div>
+  <ng-template
+      #content
+      let-observer
+      class="hh"
+  >
+      <div>
+        <div  >
+            <button
+                tuiButton
+                size='xl'
+                appearance="secondary"
+                style="width:50% ;"
+                class="contentBtn"
+                (click)="isClickedDetails()"
+            >
+            <span>Ayrıntılar</span>
+            </button>
+
+            <button
+              tuiButton
+              size="xl"
+              appearance="secondary"
+              style="width:50%;"
+              (click)="isClickedHistory()"
+            >
+              <span>Geçmiş</span>
+            </button>
+        </div>
+
+        <div style="height:300px; margin: 30px;" *ngIf="clickDetails" class="details">        
+          <div class="container" style="margin-top: 30px;" *ngFor="let item of [1,2,3,4]">
+            <div class="row" style="filter:blur(4px);">
+              <div class="col-3" style="height:50px;background-color:#D9D9D9;margin-right: 20px;"></div>
+              <div class="col" style="height:50px;background-color:#D9D9D9;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="height:500px; margin: 30px;" *ngIf="clickHistory" class="details"> 
+          <div class="container" style="margin-top: 30px;" *ngFor="let item of [1,2,3,4,5,6]">
+            <div class="row" style="filter:blur(4px);">
+              <div class="col-3" style="height:50px;background-color:#D9D9D9;margin-right: 20px;"></div>
+              <div class="col" style="height:50px;background-color:#D9D9D9;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </ng-template>
+
+
+  <ng-template
+    #edit
+  >
+    <div >
+      <h2>Alarm</h2>
+    </div>
+    <div>
+    
+      <form [formGroup]="testForm" class="mt-1 mb-3">
+          <tui-input formControlName="input3">
+            Pin numarasını yazınız
+          <input tuiTextfield />
+          </tui-input>
+      </form> 
+
+      <form [formGroup]="testForm" class="mt-1 mb-3">
+          <tui-input formControlName="input3">
+            Sayaç tipini yazınız
+          <input tuiTextfield />
+          </tui-input>
+      </form>
+
+      <form [formGroup]="testForm" class="mt-1 mb-3">
+          <tui-input formControlName="input3">
+            Alt Limiti yazınız
+          <input tuiTextfield />
+          </tui-input>
+      </form>
+
+      <form [formGroup]="testForm" class="mt-1 mb-3">
+          <tui-input formControlName="input3">
+            Üst Limiti yazınız
+          <input tuiTextfield />
+          </tui-input>
+      </form> 
+
+      
+    </div>
+
+    <div style="justify-content:end ; display:flex">
+      <button
+        tuiButton
+        size="l"
+        type="submit"
+        class="tui-form__button"
+      >
+        Düzenle
+      </button>
+    </div>
+  </ng-template>
+

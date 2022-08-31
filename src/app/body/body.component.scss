@@ -1,0 +1,38 @@
+.body {
+    width: 1200px;
+    height: 800px;
+    margin-left: 8rem;
+    z-index: 0;
+    position: relative;
+    transition: all .5s ease;
+    background: #F5F5F5;
+    padding: 3rem;border: 1px dashed #AAAAAA;
+    border-radius: 12px;
+}
+
+
+
+.ellipse{
+    background-color: #AAAAAA;
+    width: 44px;
+    height: 44px;
+    right: 0;
+    top: 0;
+    border-radius: 50%;
+}
+
+h5{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+}
+h3{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    color: #232E3F;
+}
+
+
+
+

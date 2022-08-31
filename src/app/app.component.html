@@ -1,0 +1,16 @@
+<tui-root>
+    <app-sidenav (onToggleSideNav)="onToggleSideNav($event)" 
+                 (sendNameOfDevice)="getDeviceNameFromSidenav($event)"
+                 (whichDevice) ="getWhichDeviceFromSidenav($event)"
+                 (whichIcon) = "getWhichIconFromSidenav($event)" >
+    </app-sidenav>
+                 
+    <app-body
+        [collapsed]="isSideNavCollapsed"
+        [deviceName] = "deviceName"
+        [whichDevice] ="whichDevice"
+        [whichIcon] = "whichIcon"
+    ></app-body> 
+
+    <!-- <div>[screenWidth]="screenWidth"</div> -->
+</tui-root>

@@ -1,0 +1,125 @@
+
+<div class="container " 
+    style="background-color:#D9D9D9;border-radius: 12px 12px 0px 0px
+    ;position: relative;">
+    <div class="row">
+        <div class="col" style="height: 200px;border-radius: 12px 12px 0px 0px;
+                         justify-content: center;display: flex;align-items: center;" >
+            <div class="profileCircle" 
+            style="  justify-content: center;display: flex;align-items: center;">
+                <i class="far fa-user-circle fa-4x" style="color:white;"></i>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col" style="background-color:white;margin-right: 5px;height: 460px;">
+            <h2 style="justify-content:center ; display:flex ; margin-right: 30px;margin-top:20px;">Kullanıcı Bilgileri</h2>
+            <button
+                tuiButton
+                size='xl'
+                appearance="secondary"
+                (click) = editPassword(edit)
+            >
+                <i class="fa fa-key-skeleton"  style="margin-right:5px ;margin-left: -10px;"></i>
+                <span>Parolayı Değiştir</span>
+            </button>
+
+            <button
+                tuiButton
+                size='xl'
+                appearance="secondary"
+                style="float: right;"
+            >
+                <i class="fa fa-pencil"  style="margin-right:5px ;margin-left: -10px;"></i>
+                <span>Düzenle</span>
+            </button>
+            <div style="height:500px; margin: 30px;"  class="details"> 
+                <div class="container" style="margin-top: 30px;" *ngFor="let item of [1,2,3,4]">
+                  <div class="row" style="filter:blur(4px);">
+                    <div class="col-3" style="height:50px;background-color:#D9D9D9;margin-right: 20px;"></div>
+                    <div class="col" style="height:50px;background-color:#D9D9D9;"></div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+        <div class="col" style="background-color:white;height: 460px;">
+            <h2 style="justify-content:center ; display:flex;margin-top:20px;">Cihazlarım</h2>
+            <div class="row" >
+                <div class="col mt-3" style="justify-content:center ; display:flex ;">      
+                    <i class="fa fa-user-check"></i>
+                    Admin
+                </div>
+                <div class="col mt-3" style="justify-content:center ; display:flex ;">
+                    <i class="fa fa-user"></i>
+                    Kullanıcı
+                </div>
+            </div>
+
+            <div class="row" >
+                <div class="col mt-3" style="justify-content:center ; display:flex ;">      
+                    <ul style="list-style-type:circle">
+                        <li *ngFor="let item of [1,2,3,4,5] ; let i=index">
+                            Cihaz {{i}}
+                        </li>
+                    </ul>
+                </div>
+                <div class="col mt-3" style="justify-content:center ; display:flex ;">
+                    <ul style="list-style-type:circle">
+                        <li *ngFor="let item of [1,2,3,4] ; let i=index">
+                            Cihaz {{i}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template
+  #edit
+>
+  <div >
+    <h2>Parolayı Değiştir</h2>
+  </div>
+  <div>
+
+    Eski Parola
+    <form [formGroup]="testForm" class="mt-1 mb-3">
+        <tui-input-password formControlName="input1">
+            Eski parolayı giriniz
+        <input tuiTextfield />
+        </tui-input-password>
+    </form>
+    Yeni Parola
+    <form [formGroup]="testForm" class="mt-1 mb-3">
+        <tui-input-password formControlName="input2">
+            Yeni parolayı giriniz
+        <input tuiTextfield />
+        </tui-input-password>
+    </form>   
+    Yeni Parola Tekrar
+    <form [formGroup]="testForm" class="mt-1 mb-3">
+        <tui-input-password formControlName="input3">
+         Yeni parolayı giriniz
+        <input tuiTextfield />
+        </tui-input-password>
+    </form>    
+    
+    
+  </div>
+
+  <div style="justify-content:center ; display:flex" class="mt-3">
+    <button
+        tuiButton
+        size="l"
+        type="submit"
+        class="tui-form__button"
+    >
+        Onayla
+    </button>
+  </div>
+
+</ng-template>
+
